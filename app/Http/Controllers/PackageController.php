@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Package;
 use Illuminate\Http\Request;
-
+use Auth;
 class PackageController extends Controller
 {
     /**
@@ -34,20 +34,31 @@ class PackageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+     public function mypackages()
+     {
+       $packages = Package::where('profile_id',Auth::user()->profile_id)->get();
+       return view('package\my_packages',compact('packages'));
+
+     }
+
+
+
     public function store(Request $request)
     {
-        $courrier = $request['courrier'];
+        $courrier = $request['carrier'];
         $tracking = $request['tracking'];
         $shop = $request['shop'];
         $value = $request['value'];
+        $description = $request['description'];
         $package =  new Package();
         $package ->courrier = $courrier;
         $package ->tracking = $tracking;
         $package ->tracking = $tracking;
         $package ->shop = $shop;
-        $package ->product_description = $value;
+        $package ->value = $value;
+        $package ->product_description = $description;
+        $package->profile_id = Auth::user()->profile_id;
         $package->save();
-
         return redirect()->back();
     }
 
@@ -57,9 +68,10 @@ class PackageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function showShopTracking(Request $request)
     {
-        //
+
+      return view('search\search_tracking_shop');
     }
 
     /**
@@ -94,5 +106,14 @@ class PackageController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function CountMypackages()
+    {
+      $count[0] = Package::where('profile_id',Auth::user()->profile_id)->get()->count();
+      $count[1] = Package::where('profile_id',Auth::user()->profile_id)->get()->count();
+      $count[2] = Package::where('profile_id',Auth::user()->profile_id)->get()->count();
+      $count[3] = Package::where('profile_id',Auth::user()->profile_id)->get()->count();
+      return $count;
     }
 }

@@ -22,7 +22,7 @@
             </div>
             <div class="x_content">
 
-                <form class="form-horizontal form-label-left input_mask">
+                <form class="form-horizontal form-label-left input_mask" action="{{url('/add_package')}}">
                     <div class="form-group">
                         <label class="control-label col-md-3 col-sm-3 col-xs-12">Carrier</label>
 
@@ -70,7 +70,7 @@
                             </div>
                             <div class="x_content">
                                 <p>Drag multiple files to the box below for multi upload or click to select files. This is for demonstration purposes only, the files are not uploaded to any server.</p>
-                                <form action="" class="dropzone dz-clickable"><div class="dz-default dz-message"><span>Drop files here to upload</span></div></form>
+                                
                             </div>
                         </div>
                     </div>
@@ -88,14 +88,8 @@
 </div>
 
 <!-- footer content -->
-<footer>
-    <div class="pull-right">
-        Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-    </div>
-    <div class="clearfix"></div>
-</footer>
+
 <!-- /footer content -->
 
 <!-- /page content -->
 @endsection
-

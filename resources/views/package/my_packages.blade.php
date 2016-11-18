@@ -11,18 +11,30 @@
 
 @section('main_container')
 
+
+    <style>
+
+      .centered-items tr > td{
+      text-align: center;
+      }
+
+      .centered-head tr > th{
+        text-align: center;
+      }
+    </style>
     <!-- page content -->
     <div class="right_col" role="main">
         <h1>Mis paquetes</h1>
-        <div class="container menu" style="background-color: white;">
-            <div class="rows" style="margin:2%;">         
+        @foreach($packages as $package)
+        <div class="container menu" style="background-color: white;border-top: solid;">
+            <div class="rows" style="margin:2%;">
                 <div class="col-lg-12 col-sm-6 col-xs-12" >
-                 <div class="col-lg-4 col-sm-6 col-xs-12 " >
-                <img src="image/foto4.png" class="img-responsive fotos">
-                <br>    
+                 <div class="col-lg-2 col-sm-6 col-xs-12 " style="margin-bottom: 5%;">
+                <img src="{{ asset('images/box.png') }}" class="img-responsive fotos" style="height: 125px;">
+                <br>
                     <span class="label label-primary" style="font-size: 1em;margin-left: 7%;"><a href=" " style="color:white;">Ver producto</a></span>
                 </div>
-                 <div class="col-md-8 col-sm-6 col-xs-12">
+                 <div class="col-md-10 col-sm-6 col-xs-12">
                 <div class="x_panel">
                   <div class="x_title">
                     <h2>Paquetes Entregados</h2>
@@ -34,27 +46,26 @@
                   </div>
                   <div class="x_content">
 
-                    <table class="table">
-                      <thead>
+                    <table class="col-md-12" >
+                      <thead class="centered-head" >
                         <tr>
-                          <th>Courier</th>
-                          <th>Tracking</th>
-                          <th>Descrición</th>
-                          <th>Valor</th>
-                          <th>Estado</th>
-                          <th>Factura interna</th>
+                          <th class="col-md-2">Courier</th>
+                          <th class="col-md-2">Tracking</th>
+                          <th class="col-md-2" >Descrición</th>
+                          <th class="col-md-2">Valor</th>
+                          <th class="col-md-2">Estado</th>
+                          <th class="col-md-2">Factura interna</th>
                         </tr>
                       </thead>
-                      <tbody >
-                        <tr>
-                         <th style="text-align: center;">44</th>
-                          <th style="text-align: center;">4</th>
-                          <td style="text-align: center;">Nitendo 2Ds</td>
-                          <td style="text-align: center;">120000</td>
-                          <td style="text-align: center;">Entregado</td>
-                          <td style="text-align: center;">122</td>
+                      <tbody class="centered-items">
+                      <tr>
+                         <td class="col-md-2">{{$package->courrier}}</td>
+                          <td class="col-md-2">{{$package->tracking}}</td>
+                          <td class="col-md-2">{{$package->product_description}}</td>
+                          <td class="col-md-2"><img src="{{ asset('images/dollar.png') }}"style="height: 15px;">{{$package->value}}.00</td>
+                          <td class="col-md-2">{{$package->courrier}}</td>
+                          <td class="col-md-2">{{$package->courrier}}</td>
                         </tr>
-                       
                       </tbody>
                     </table>
 
@@ -64,15 +75,11 @@
                 </div>
             </div>
         </div>
+        @endforeach
     </div>
     <!-- /page content -->
 
     <!-- footer content -->
-    <footer>
-        <div class="pull-right">
-            Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
-        </div>
-        <div class="clearfix"></div>
-    </footer>
+
     <!-- /footer content -->
 @endsection
