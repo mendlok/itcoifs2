@@ -16,24 +16,23 @@
     <div class="right_col" role="main">
         <div class="row tile_count">
             <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
-              <a href="{{ url('/searchByShop')}}"></a>
-              <span class="count_top"><i class="fa fa-archive"></i>  Mis paquetes</span>
-              <div class="count">{{ $count[0] }}</div>
+              <span class="count_top"><i class="fa fa-user"></i>  Mis paquetes</span>
+              <div class="count">105</div>
               <span class="count_bottom"><i class="green">4% </i> Desde el último mes</span>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-bell"></i> Paquetes alertados</span>
-              <div class="count">{{ $count[1] }}</div>
+              <span class="count_top"><i class="fa fa-clock-o"></i> Paquetes en Miami</span>
+              <div class="count">5</div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i>Desde el último mes</span>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-plane"></i>  Paquetes en transito</span>
-              <div class="count">{{ $count[2] }}</div>
+              <span class="count_top"><i class="fa fa-user"></i>  Paquetes en transito</span>
+              <div class="count">12</div>
               <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i>Desde el último mes</span>
             </div>
             <div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count">
-              <span class="count_top"><i class="fa fa-check"></i>  Paquetes entregados</span>
-              <div class="count">{{ $count[3] }}</div>
+              <span class="count_top"><i class="fa fa-user"></i>  Paquetes entregados</span>
+              <div class="count">7</div>
               <span class="count_bottom"><i class="red"><i class="fa fa-sort-desc"></i>12% </i>Desde el último mes</span>
             </div>
           </div>
@@ -56,6 +55,8 @@
                       <ul class="nav nav-tabs tabs-left">
                         <li class="active"><a href="#mipack" data-toggle="tab" aria-expanded="true">Mis paquetes</a>
                         </li>
+                        <li><a href="#user" data-toggle="tab" aria-expanded="false"><i class="fa fa-user"></i>        Usuario</a>
+                        </li>
                       </ul>
                     </div>
 
@@ -65,25 +66,27 @@
                         <div class="tab-pane active" id="mipack">
                           <p class="lead">Mis paquetes</p>
                           <ul class="nav nav-tabs tabs-left">
-                          <li class=""><a href="{{url('/mypackages')}}">Mis paquetes</a>
+                          <li class=""><a href="#" data-toggle="tab" aria-expanded="false">Paquetes</a>
                         </li>
 
-                        <li class=""><a href="#alertmiami" data-toggle="tab" aria-expanded="false">  Alertados y pendientes de recibo en Miami</a>
-                        </li>
-
-                        <li class=""><a href="#" data-toggle="tab">Retenidos en Miami</a>
-                        </li>
-                           <li class=""><a href="#" data-toggle="tab" >En tránsito:Miami - Destino Final</a>
-                        </li>
-                           <li class=""><a href="#" data-toggle="tab" >Entregados</a>
-                        </li>
-                           <li class=""><a href="#" data-toggle="tab" > Retenidos por falta de Factura Comercial</a>
-                        </li>
-                           <li class=""><a href="{{ url('/newpackage') }} "> Alértanos tus compras</a>
+                        <li class=""><a href="#" data-toggle="tab" aria-expanded="false">Paquetes sin reclamar</a>
                         </li>
                           </ul>
                         </div>
 
+                        <div class="tab-pane " id="user">
+                          <p class="lead">Usuarios</p>
+                          <ul class="nav nav-tabs tabs-left">
+                          <li class=""><a href="#" data-toggle="tab" aria-expanded="false">Crear nuevo administrador</a>
+                        </li>
+                        <li class=""><a href="#" data-toggle="tab" aria-expanded="false">Ver todos los administradores</a>
+                        </li>
+                        <li class=""><a href="#" data-toggle="tab" aria-expanded="false">Ver todos los usuarios clientes</a>
+                        </li>
+                        <li class=""><a href="#" data-toggle="tab" aria-expanded="false">Eliminar usuarios clientes.</a>
+                        </li>
+                          </ul>
+                        </div>
                       </div>
                     </div>
                 </div>
@@ -94,7 +97,7 @@
     <!-- /page content -->
 
     <!-- footer content -->
-
+   
 
     <script type="text/javascript">
       $(document).ready(function(){

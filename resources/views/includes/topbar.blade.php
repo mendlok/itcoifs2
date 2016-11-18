@@ -2,7 +2,7 @@
 <div class="top_nav">
     <div class="nav_menu">
         <nav>
-            <div class="nav toggle">
+            <div class="nav toggle ">
                 <a id="menu_toggle"><i class="fa fa-bars"></i></a>
             </div>
 
@@ -90,20 +90,20 @@
                         </li>
                     </ul>
                 </li>
-                <form action="">
+                <form action="{{ url('/searchByShop') }}" style="margin-top: 2%;">
                  <li role="presentation" >
                         <div class="input-group">
                                <button type="submit" class="btn btn-default ">#Buscar</button>
-                          </div> 
+                          </div>
                 </li>
                 <li role="presentation" >
                         <div class="input-group">
-                              
-                               <input type="text" class="form-control" placeholder="#Buscar" aria-describedby="basic-addon1">  
+
+                               <input type="text" class="form-control" placeholder="#Buscar" aria-describedby="basic-addon1" name="track">
                         </div>
                 </li>
                 </form>
-                 
+
             </ul>
         </nav>
     </div>
